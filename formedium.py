@@ -16,7 +16,8 @@ Use side of the page to adjust inputs.
 
 @st.cache_resource
 def load_and_train_model():
-    df = pd.read_csv('salary.txt', delim_whitespace=True)
+    file_url = "https://raw.githubusercontent.com/akshan-main/formedium-data557/main/salary.txt"
+    df = pd.read_csv(file_url, delim_whitespace=True)
     df = df.dropna(subset=['rank'])
 
     df['year_full'] = df['year'] + 1900
