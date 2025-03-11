@@ -16,7 +16,7 @@ Use side of the page to adjust inputs.
 
 @st.cache_resource
 def load_and_train_model():
-    df = pd.read_csv('/Users/akshankrithick/downloads/data557project/salary.txt', delim_whitespace=True)
+    df = pd.read_csv('salary.txt', delim_whitespace=True)
     df = df.dropna(subset=['rank'])
 
     df['year_full'] = df['year'] + 1900
@@ -102,7 +102,7 @@ if submit_button:
 
     color_scale = alt.Scale(
         domain=["Female", "Male"],
-        range=["pink", "blue"]
+        range=["#CC6594", "#347DC1"]
     )
 
     chart = alt.Chart(plot_df).mark_line().encode(
